@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SWEET QUIZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive;
+            background-image: url('heart2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #d6336c;
+            text-align: center;
+            font-size: 36px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question p {
+            font-size: 20px;
+            color: #cc3399;
+        }
+
+        label {
+            display: block;
+            margin: 5px 0;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        button {
+            background-color: #d6336c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #a22a54;
+        }
+
+        #result {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 22px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Quick Quiz</h1>
+
+    <form id="quizForm">
+        <div class="question">
+            <p>1. What do you like to call me?</p>
+            <label><input type="radio" name="q1" value="a"> Mage Manikaa</label>
+            <label><input type="radio" name="q1" value="b"> Hola gediyoo</label>
+            <label><input type="radio" name="q1" value="c"> Thuuthi manika</label>
+            <label><input type="radio" name="q1" value="d"> Bubuuu</label>
+        </div>
+
+        <div class="question">
+            <p>2. Which animal do I like?</p>
+            <label><input type="radio" name="q2" value="a"> Dog</label>
+            <label><input type="radio" name="q2" value="b"> Cat</label>
+            <label><input type="radio" name="q2" value="c"> Rabbit</label>
+        </div>
+
+        <div class="question">
+            <p>3. Choose the kiss I like the most</p>
+            <label><input type="radio" name="q3" value="a"> Lip kiss</label>
+            <label><input type="radio" name="q3" value="b"> Forehead kiss</label>
+            <label><input type="radio" name="q3" value="c"> Neck kiss</label>
+        </div>
+
+        <div class="question">
+            <p>4. What things from you make me feel better when I'm sad?</p>
+            <label><input type="radio" name="q4" value="a"> Tight hug</label>
+            <label><input type="radio" name="q4" value="b"> Advice</label>
+            <label><input type="radio" name="q4" value="c"> None of the above</label>
+        </div>
+
+        <button type="button" onclick="submitQuiz()">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function submitQuiz() {
+            const answers = {
+                q1: 'a',
+                q2: 'b',
+                q3: 'a',
+                q4: 'a'
+            };
+
+            let score = 0;
+            let totalQuestions = Object.keys(answers).length;
+
+            for (let q in answers) {
+                const userAnswer = document.querySelector(`input[name=${q}]:checked`);
+                if (userAnswer && userAnswer.value === answers[q]) {
+                    score++;
+                }
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = `You scored ${score} out of ${totalQuestions}!`;
+
+            if (score === totalQuestions) {
+                // ✅ Redirect when all answers are correct
+                window.location.href = '3rd page.html';
+            }
+        }
+    </script>
+
+</body>
+</html>

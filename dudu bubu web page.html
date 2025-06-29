@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Duduu Bubuu</title>
+    <style>
+        body {
+            background-image: url('heart2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; 
+			font-family:'Times New Roman',serif;
+		}
+                  }
+      h1 { 
+          text-align: center;
+          font-family: 'Time New Roman',serif;
+          color:#ff3388;
+          font-size:clamp(24px,6vw,72px);
+      }
+	  
+	  .login-container {
+	       max-width: 400px;
+		   margin: 50px auto;
+		   padding: 20px;
+		   background:20px;
+		   border-radius: 20px;
+		   text-align: center;
+	   }
+	   
+	   .input-group {
+	       margin: 15px 0;
+		   display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .input-group span {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .input-group input {
+            border: none;
+            outline: none;
+            flex: 1;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ff3388;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #cc2270;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to my heart ❤️</h1>
+	    
+
+    <div class="login-container">
+        <div class="input-group">
+            <span>👤</span>
+            <input type="text" id="username" placeholder="USERNAME" />
+        </div>
+        <div class="input-group">
+            <span>🔒</span>
+            <input type="password" id="password" placeholder="PASSWORD" />
+        </div>
+        <button onclick="validateLogin()">Submit</button>
+        <div class="error-message" id="error"></div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const errorDiv = document.getElementById("error");
+
+            if (username === "DUDU" && password === "icedcoffee") {
+                // Redirect if correct
+                window.location.href = "web page 2.html";
+            } else {
+                // Show error message
+                errorDiv.textContent = "Oops! Incorrect name or password.";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+         
+          
+
+
+    
