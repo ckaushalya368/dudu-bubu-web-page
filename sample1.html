@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Romantic Login</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', cursive;
+      background-image: url('back1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+       height: 100vh;
+    }
+
+    .login-container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      padding: 40px;
+      width: 300px;
+      text-align: center;
+      position: relative;
+    }
+
+    .login-container::before {
+      content: "💖";
+      font-size: 40px;
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #e75480;
+      font-family: 'Lucida Handwriting', cursive;
+    }
+
+    .input-group {
+      margin: 15px 0;
+      text-align: left;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #f8bbd0;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    button {
+      margin-top: 20px;
+      background: #ff69b4;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #ff1493;
+    }
+
+    .error-message {
+      margin-top: 15px;
+      color: red;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Welcome, Love!</h2>
+    <div class="input-group">
+      <input type="text" id="username" placeholder="💌 Your name" />
+    </div>
+    <div class="input-group">
+      <input type="password" id="password" placeholder="🔒 Secret code" />
+    </div>
+    <button onclick="validateLogin()">💗 Enter</button>
+    <div class="error-message" id="error"></div>
+  </div>
+
+  <script>
+    function validateLogin() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorDiv = document.getElementById("error");
+
+      if (username === "DUDU" && password === "Iced coffee") {
+        window.location.href = "page2.html";
+      } else {
+        errorDiv.textContent = "Oops! That's not the love password 💔";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Share Your Thoughts 💭</title>
+  <style>
+    body {
+      background-color: #fffafc;
+      font-family: 'Segoe UI', cursive;
+      text-align: center;
+      padding: 40px;
+      color: #d63384;
+    }
+
+    h1 {
+      font-family: 'Lucida Handwriting', cursive;
+      color: #ff3399;
+      margin-bottom: 20px;
+    }
+
+    .comment-box {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ffc0cb;
+      border-radius: 10px;
+      resize: none;
+      font-family: 'Segoe UI', cursive;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 20px;
+      background-color: #ff69b4;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d63384;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #ffaadd;
+      color: white;
+      border-radius: 20px;
+      text-decoration: none;
+    }
+
+    .response {
+      margin-top: 20px;
+      font-style: italic;
+      color: #8b008b;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💬 Your Thought for This Time</h1>
+
+  <div class="comment-box">
+    <textarea id="userComment" placeholder="Type something lovely... 💗"></textarea><br>
+    <button onclick="submitComment()">Send</button>
+
+    <div class="response" id="responseText"></div>
+  </div>
+
+  <a href="page2.html" class="back-button">⬅ Back to Stickers</a>
+
+  <script>
+    function submitComment() {
+      const comment = document.getElementById('userComment').value.trim();
+      const response = document.getElementById('responseText');
+
+      if (comment) {
+        response.textContent = "💖 Thank you for your beautiful words! 💌";
+        document.getElementById('userComment').value = "";
+      } else {
+        response.textContent = "📝 Please write something before submitting!";
+      }
+    }
+  </script>
+
+</body>
+</html>

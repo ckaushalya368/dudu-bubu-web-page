@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sticker 2 - Quick Quiz 💞</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffe0ec, #f8bbd0);
+      font-family: 'Segoe UI', cursive;
+      padding: 30px;
+      color: #d63384;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff3399;
+      font-family: 'Lucida Handwriting', cursive;
+    }
+
+    .question {
+      background: #fff;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 20px;
+      max-width: 600px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 10px 25px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e75480;
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #8b008b;
+      font-style: italic;
+    }
+
+    .back {
+      margin-top: 30px;
+      display: inline-block;
+      background-color: #ffaadd;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Quick Quiz 💘</h1>
+
+  <form id="quizForm">
+    <div class="question">
+      <p>1. What do you like to call me?</p>
+      <label><input type="radio" name="q1" value="a"> Mage Manikaa</label>
+      <label><input type="radio" name="q1" value="b"> Hola gediyoo</label>
+      <label><input type="radio" name="q1" value="c"> Thuuthi manika</label>
+      <label><input type="radio" name="q1" value="d"> Bubuuu</label>
+    </div>
+
+    <div class="question">
+      <p>2. Which animal do I like?</p>
+      <label><input type="radio" name="q2" value="a"> Dog</label>
+      <label><input type="radio" name="q2" value="b"> Cat</label>
+      <label><input type="radio" name="q2" value="c"> Rabbit</label>
+    </div>
+
+    <div class="question">
+      <p>3. Choose the kiss I like the most</p>
+      <label><input type="radio" name="q3" value="a"> Lip kiss</label>
+      <label><input type="radio" name="q3" value="b"> Forehead kiss</label>
+      <label><input type="radio" name="q3" value="c"> Neck kiss</label>
+    </div>
+
+    <div class="question">
+      <p>4. What things from you make me feel better when I'm sad?</p>
+      <label><input type="radio" name="q4" value="a"> Tight hug</label>
+      <label><input type="radio" name="q4" value="b"> Advice</label>
+      <label><input type="radio" name="q4" value="c"> None of the above</label>
+    </div>
+
+    <button type="button" onclick="submitQuiz()">💖 Submit</button>
+  </form>
+
+  <div class="result" id="quizResult"></div>
+
+  <a href="page2.html" class="back">⬅ Back to Stickers</a>
+
+  <script>
+    function submitQuiz() {
+      const form = document.forms["quizForm"];
+      const answers = {
+        q1: "a",  // Bubuuu
+        q2: "b",  // Cat
+        q3: "a",  // Forehead kiss
+        q4: "a"   // Tight hug
+      };
+
+      let score = 0;
+      let total = 4;
+
+      for (let q in answers) {
+        const userAnswer = form[q].value;
+        if (userAnswer === answers[q]) {
+          score++;
+        }
+      }
+
+      const resultText = document.getElementById("quizResult");
+      if (score === total) {
+        resultText.textContent = `🎉 Aww yesss! You got all ${score}/${total} 💕 You really know me!`;
+      } else {
+        resultText.textContent = `🥹 You scored ${score}/${total}. Hmm, need more cuddles and chats! 💌`;
+      }
+    }
+  </script>
+
+</body>
+</html>

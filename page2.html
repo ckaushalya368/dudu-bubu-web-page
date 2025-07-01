@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DUDU BUBU Stickers</title>
+  <style>
+    body {
+      background: #ffe6f0;
+      font-family: 'Segoe UI', cursive;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #ff3399;
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .sticker-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .sticker-gallery img {
+      width: 150px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .sticker-gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    .back-button {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff3399;
+      color: white;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #cc2270;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💗 which one do you like? 💗</h1>
+
+  <div class="sticker-gallery">
+    <img src="stiker1.png.jpg" alt="Stiker 1">
+	<a href="sticker1-video.html">
+    <img src="sticker1.png.jpg" alt="Look at this">
+    </a>
+
+    <img src="sticker2.png.jpg" alt="Sticker 2">
+	<a href="sticker2-quiz.html">
+    <img src="sticker3.png" alt="QUIZ">
+    </a>
+	
+    <img src="sticker3.png.jpg" alt="Sticker 3">
+	<a href="sticker3-comment.html">
+    <img src="sticker3.png" alt="Comment">
+    </a>
+
+    <img src="sticker4.png.jpg" alt="Sticker 4">
+	<a href="sticker4-letter.html">
+    <img src="sticker4.png." alt="LAST ONE">
+    </a>
+
+    <!-- Add more stickers as needed -->
+  </div>
+  
+
+  <a href="sample1.html" class="back-button">⬅ Back to Login</a>
+
+</body>
+</html>
